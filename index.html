@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Yna Studio</title>
 
 <style>
@@ -12,7 +11,7 @@
 body{
 font-family:Arial;
 margin:0;
-background:#fafafa;
+background:#f7f7f7;
 }
 
 header{
@@ -29,7 +28,7 @@ border-radius:50%;
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 padding:40px 10%;
 }
@@ -38,7 +37,7 @@ padding:40px 10%;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
 .product img{
@@ -53,13 +52,13 @@ margin-top:8px;
 }
 
 button{
-margin-top:10px;
+width:100%;
 padding:10px;
-border:none;
+margin-top:10px;
 background:black;
 color:white;
+border:none;
 cursor:pointer;
-width:100%;
 }
 
 button:hover{
@@ -74,20 +73,20 @@ background:white;
 padding:20px;
 border-radius:10px;
 width:260px;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-}
-
-.cart h3{
-margin-top:0;
-}
-
-.cart-item{
-font-size:14px;
-margin-bottom:8px;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
 }
 
 .checkout{
 background:#1877f2;
+}
+
+#orderMessage{
+background:white;
+padding:20px;
+margin:40px;
+border-radius:10px;
+display:none;
+white-space:pre-line;
 }
 
 </style>
@@ -107,9 +106,11 @@ background:#1877f2;
 </header>
 
 
+
 <div class="products">
 
 <!-- Closed Heels -->
+
 <div class="product">
 
 <img src="Closed heels.jpg">
@@ -138,7 +139,9 @@ Add to Cart
 </div>
 
 
+
 <!-- Knotted Mules -->
+
 <div class="product">
 
 <img src="Knotted Mules.jpg">
@@ -167,7 +170,9 @@ Add to Cart
 </div>
 
 
-<!-- Closed Mule -->
+
+<!-- Closed Heeled Mule -->
+
 <div class="product">
 
 <img src="Closed-heeled mule.jpg">
@@ -196,12 +201,14 @@ Add to Cart
 </div>
 
 
-<!-- Open Toe -->
+
+<!-- Open Toe Heels -->
+
 <div class="product">
 
 <img src="Open-toe heels.jpg">
 
-<h3>Open-Toe Heels</h3>
+<h3>Open Toe Heels</h3>
 
 <p><b>715 PHP</b></p>
 
@@ -218,14 +225,16 @@ Add to Cart
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Open-Toe Heels',715,'color4','size4')">
+<button onclick="addToCart('Open Toe Heels',715,'color4','size4')">
 Add to Cart
 </button>
 
 </div>
 
 
+
 <!-- Mary Jane -->
+
 <div class="product">
 
 <img src="Mary Jane shoes.jpg">
@@ -256,7 +265,6 @@ Add to Cart
 </div>
 
 
-<!-- CART -->
 
 <div class="cart">
 
@@ -267,10 +275,14 @@ Add to Cart
 <p><b>Total: <span id="total">0</span> PHP</b></p>
 
 <button class="checkout" onclick="checkout()">
-Checkout via Facebook
+Checkout
 </button>
 
 </div>
+
+
+
+<div id="orderMessage"></div>
 
 
 
@@ -295,15 +307,16 @@ updateCart()
 function updateCart(){
 
 let cartDiv=document.getElementById("cartItems")
+
 cartDiv.innerHTML=""
 
 cart.forEach(item=>{
 
 cartDiv.innerHTML+=`
-<div class="cart-item">
+<div>
 ${item.name}<br>
 ${item.color} | ${item.size}
-</div>
+</div><br>
 `
 
 })
@@ -311,6 +324,8 @@ ${item.color} | ${item.size}
 document.getElementById("total").innerText=total
 
 }
+
+
 
 function checkout(){
 
@@ -320,13 +335,15 @@ cart.forEach(item=>{
 message+=`${item.name} - ${item.color} - ${item.size}\n`
 })
 
-message+=`\nTotal: ${total} PHP\n\nPlease let me know when we can meet for pickup.`
+message+=`\nTotal: ${total} PHP\n\nCan we arrange a meeting time for pickup?`
 
-navigator.clipboard.writeText(message)
+let box=document.getElementById("orderMessage")
 
-alert("Order copied! Paste it in Messenger.")
+box.style.display="block"
 
-window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr")
+box.innerText=message
+
+window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr","_blank")
 
 }
 
