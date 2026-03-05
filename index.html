@@ -146,8 +146,13 @@ footer{
 background:#000;
 color:white;
 text-align:center;
-padding:25px;
+padding:30px;
 margin-top:40px;
+}
+
+a.email{
+color:#fff;
+text-decoration:none;
 }
 
 </style>
@@ -182,7 +187,7 @@ margin-top:40px;
 <p><b>7.</b> You will be redirected to Facebook Messenger</p>
 <p><b>8.</b> Paste the message and send</p>
 
-<p>We will then arrange a <b>time and place to meet for the transaction.</b></p>
+<p>We will arrange a <b>meeting time in Iloilo City</b> for the transaction.</p>
 
 <a href="https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr" target="_blank">
 <button class="fbbtn">View Facebook Page</button>
@@ -333,8 +338,13 @@ margin-top:40px;
 
 <footer>
 
-<p>Yna Studio</p>
-<p>Contact us via Facebook Messenger</p>
+<h3>Contact Yna Studio</h3>
+
+<p>📍 Iloilo City, Philippines</p>
+
+<p>📧 <a class="email" href="mailto:ynastudio23@gmail.com">ynastudio23@gmail.com</a></p>
+
+<p>Or contact us through Facebook Messenger</p>
 
 </footer>
 
@@ -344,11 +354,8 @@ let cart=[]
 let count=0
 
 function toggleCart(){
-
 let box=document.getElementById("cartBox")
-
 box.style.display=box.style.display=="block"?"none":"block"
-
 }
 
 function addCart(name,price,btn){
@@ -368,7 +375,6 @@ let counter=product.querySelector(".counter span")
 counter.innerText=parseInt(counter.innerText)+1
 
 displayCart()
-
 }
 
 function displayCart(){
@@ -382,7 +388,6 @@ html+=`<p>${i+1}. ${item.name} | ${item.color} | ${item.size} | ₱${item.price}
 })
 
 document.getElementById("cartItems").innerHTML=html
-
 }
 
 function checkout(){
@@ -400,7 +405,7 @@ message+=`${i+1}. ${item.name}%0AColor: ${item.color}%0ASize: ${item.size}%0APri
 
 })
 
-message+="Please let me know when we can meet for the transaction. Thank you!"
+message+="I am located in Iloilo City and would like to arrange a meet-up for the transaction. Thank you!"
 
 let decoded=decodeURIComponent(message.replace(/%0A/g,"\n"))
 
