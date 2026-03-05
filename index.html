@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,17 +10,16 @@
 <style>
 
 body{
-font-family: Arial, sans-serif;
+font-family:Arial;
 margin:0;
 background:#fafafa;
-color:#333;
 }
 
 header{
 background:black;
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:40px;
 }
 
 header img{
@@ -28,34 +27,18 @@ width:120px;
 border-radius:50%;
 }
 
-.tagline{
-font-style:italic;
-margin-top:10px;
-opacity:0.8;
-}
-
-.section{
-padding:50px 10%;
-text-align:center;
-}
-
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:30px;
-margin-top:40px;
+padding:40px 10%;
 }
 
 .product{
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.product:hover{
-transform:translateY(-5px);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .product img{
@@ -63,66 +46,55 @@ width:100%;
 border-radius:10px;
 }
 
-.price{
-font-size:20px;
-font-weight:bold;
-margin:10px 0;
-}
-
-.colors{
-font-size:14px;
-margin-bottom:15px;
+select{
+width:100%;
+padding:8px;
+margin-top:8px;
 }
 
 button{
+margin-top:10px;
+padding:10px;
+border:none;
 background:black;
 color:white;
-border:none;
-padding:12px 18px;
-border-radius:5px;
 cursor:pointer;
+width:100%;
 }
 
 button:hover{
 background:#444;
 }
 
-.steps{
-max-width:700px;
-margin:auto;
-text-align:left;
-font-size:16px;
-line-height:1.8;
+.cart{
+position:fixed;
+right:20px;
+bottom:20px;
+background:white;
+padding:20px;
+border-radius:10px;
+width:260px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
+.cart h3{
+margin-top:0;
+}
+
+.cart-item{
+font-size:14px;
+margin-bottom:8px;
+}
+
+.checkout{
+background:#1877f2;
 }
 
 </style>
 
-<script>
-
-function order(product){
-
-let message = "Hello Yna Studio! I would like to order: " + product + ". Can we arrange a meeting time to complete the purchase?";
-
-let url = "https://wa.me/?text=" + encodeURIComponent(message);
-
-window.open(url,"_blank");
-
-}
-
-</script>
-
 </head>
 
 <body>
-
 
 <header>
 
@@ -130,173 +102,236 @@ window.open(url,"_blank");
 
 <h1>Yna Studio</h1>
 
-<p class="tagline">
-Crafted in Vietnam, Worn with Filipina Confidence
-</p>
+<p>Crafted in Vietnam, Worn with Filipina Confidence</p>
 
 </header>
 
 
-<section class="section">
-
-<h2>How to Order</h2>
-
-<div class="steps">
-
-<b>Step 1:</b> Browse our shoes below and choose the style you like.<br>
-
-<b>Step 2:</b> Click the <b>“Chat to Order”</b> button under the product.<br>
-
-<b>Step 3:</b> Send us a message with the shoe name, color, and size.<br>
-
-<b>Step 4:</b> We will reply and arrange a <b>time and meeting location</b>.<br>
-
-<b>Step 5:</b> Meet us and complete the purchase in person.<br>
-
-</div>
-
-</section>
-
-
-
-<section class="section">
-
-<h2>Our Collection</h2>
-
 <div class="products">
 
-<div class="product">
-
-<img src="Mary Jane shoes.jpg">
-
-<h3>Mary Jane Shoes</h3>
-
-<div class="price">₱1,650</div>
-
-<div class="colors">
-Colors: Black • Beige • Brown
-</div>
-
-<button onclick="order('Mary Jane Shoes')">
-Chat to Order
-</button>
-
-</div>
-
-
-
+<!-- Closed Heels -->
 <div class="product">
 
 <img src="Closed heels.jpg">
 
 <h3>Closed Heels</h3>
 
-<div class="price">₱1,750</div>
+<p><b>725 PHP</b></p>
 
-<div class="colors">
-Colors: Black • Nude • White
-</div>
+<select id="color1">
+<option>Black</option>
+<option>Nude</option>
+<option>White</option>
+</select>
 
-<button onclick="order('Closed Heels')">
-Chat to Order
+<select id="size1">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addToCart('Closed Heels',725,'color1','size1')">
+Add to Cart
 </button>
 
 </div>
 
 
-
-<div class="product">
-
-<img src="Closed-heeled mule.jpg">
-
-<h3>Closed-Heeled Mule</h3>
-
-<div class="price">₱1,650</div>
-
-<div class="colors">
-Colors: Black • Brown • Beige
-</div>
-
-<button onclick="order('Closed-Heeled Mule')">
-Chat to Order
-</button>
-
-</div>
-
-
-
+<!-- Knotted Mules -->
 <div class="product">
 
 <img src="Knotted Mules.jpg">
 
 <h3>Knotted Mules</h3>
 
-<div class="price">₱1,550</div>
+<p><b>725 PHP</b></p>
 
-<div class="colors">
-Colors: Black • Cream • Tan
-</div>
+<select id="color2">
+<option>Red</option>
+<option>Black</option>
+<option>Nude</option>
+</select>
 
-<button onclick="order('Knotted Mules')">
-Chat to Order
+<select id="size2">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addToCart('Knotted Mules',725,'color2','size2')">
+Add to Cart
 </button>
 
 </div>
 
 
+<!-- Closed Mule -->
+<div class="product">
 
+<img src="Closed-heeled mule.jpg">
+
+<h3>Closed-Heeled Mule</h3>
+
+<p><b>749 PHP</b></p>
+
+<select id="color3">
+<option>Black</option>
+<option>Red</option>
+<option>Beige</option>
+</select>
+
+<select id="size3">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addToCart('Closed-Heeled Mule',749,'color3','size3')">
+Add to Cart
+</button>
+
+</div>
+
+
+<!-- Open Toe -->
 <div class="product">
 
 <img src="Open-toe heels.jpg">
 
-<h3>Open Toe Heels</h3>
+<h3>Open-Toe Heels</h3>
 
-<div class="price">₱1,650</div>
+<p><b>715 PHP</b></p>
 
-<div class="colors">
-Colors: Black • Nude • Brown
+<select id="color4">
+<option>Gold</option>
+<option>Black</option>
+<option>Nude</option>
+</select>
+
+<select id="size4">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addToCart('Open-Toe Heels',715,'color4','size4')">
+Add to Cart
+</button>
+
 </div>
 
-<button onclick="order('Open Toe Heels')">
-Chat to Order
+
+<!-- Mary Jane -->
+<div class="product">
+
+<img src="Mary Jane shoes.jpg">
+
+<h3>Mary Jane Shoes</h3>
+
+<p><b>705 PHP</b></p>
+
+<select id="color5">
+<option>Black</option>
+<option>Brown</option>
+<option>Cream</option>
+</select>
+
+<select id="size5">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addToCart('Mary Jane Shoes',705,'color5','size5')">
+Add to Cart
 </button>
 
 </div>
 
 </div>
 
-</section>
+
+<!-- CART -->
+
+<div class="cart">
+
+<h3>Cart</h3>
+
+<div id="cartItems"></div>
+
+<p><b>Total: <span id="total">0</span> PHP</b></p>
+
+<button class="checkout" onclick="checkout()">
+Checkout via Facebook
+</button>
+
+</div>
 
 
-<section class="section">
 
-<h2>Why Choose Yna Studio</h2>
+<script>
 
-<p>
-✔ Stylish handmade footwear<br>
-✔ Crafted in Vietnam<br>
-✔ Designed for Filipina elegance<br>
-✔ Personal customer service<br>
-✔ Secure meet-up transactions
-</p>
+let cart=[]
+let total=0
 
-</section>
+function addToCart(name,price,colorID,sizeID){
 
+let color=document.getElementById(colorID).value
+let size=document.getElementById(sizeID).value
 
-<footer>
+cart.push({name,price,color,size})
 
-<p><b>Yna Studio</b></p>
+total+=price
 
-<p>
-Crafted in Vietnam, Worn with Filipina Confidence
-</p>
+updateCart()
 
-<p>
-Chat with us to order and schedule a meeting for payment and pickup.
-</p>
+}
 
-</footer>
+function updateCart(){
 
+let cartDiv=document.getElementById("cartItems")
+cartDiv.innerHTML=""
+
+cart.forEach(item=>{
+
+cartDiv.innerHTML+=`
+<div class="cart-item">
+${item.name}<br>
+${item.color} | ${item.size}
+</div>
+`
+
+})
+
+document.getElementById("total").innerText=total
+
+}
+
+function checkout(){
+
+let message="Hello Yna Studio! I would like to order:\n\n"
+
+cart.forEach(item=>{
+message+=`${item.name} - ${item.color} - ${item.size}\n`
+})
+
+message+=`\nTotal: ${total} PHP\n\nPlease let me know when we can meet for pickup.`
+
+navigator.clipboard.writeText(message)
+
+alert("Order copied! Paste it in Messenger.")
+
+window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr")
+
+}
+
+</script>
 
 </body>
+
 </html>
