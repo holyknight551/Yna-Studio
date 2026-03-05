@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -11,105 +10,159 @@
 <style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#f6f6f6;
+font-family: "Segoe UI", sans-serif;
+background:#f7f7f7;
+color:#111;
 }
 
 header{
-background:black;
+background:#000;
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:35px 20px;
 }
 
-header img{
-width:120px;
-border-radius:50%;
+.logo{
+width:200px;
+margin-bottom:10px;
 }
 
-.section{
-padding:40px 10%;
+header p{
+opacity:.8;
+}
+
+.cart{
+position:fixed;
+top:20px;
+right:20px;
+background:black;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.instructions{
+background:white;
+max-width:900px;
+margin:40px auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 text-align:center;
+}
+
+.instructions h2{
+margin-top:0;
+}
+
+.instructions p{
+margin:8px 0;
+}
+
+.fbbtn{
+background:#1877f2;
+padding:12px 20px;
+color:white;
+border:none;
+border-radius:6px;
+margin-top:10px;
+cursor:pointer;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
 
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:30px;
 }
 
 .product{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.product:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.18);
 }
 
 .product img{
 width:100%;
-border-radius:10px;
+height:260px;
+object-fit:cover;
+transition:transform .5s;
+}
+
+.product:hover img{
+transform:scale(1.05);
+}
+
+.product-body{
+padding:18px;
+text-align:center;
+}
+
+.price{
+font-size:22px;
+font-weight:700;
+margin:10px 0;
 }
 
 select{
-width:100%;
+width:90%;
 padding:8px;
-margin-top:8px;
+margin:5px;
+border-radius:5px;
+border:1px solid #ddd;
 }
 
 button{
-width:100%;
-padding:10px;
-margin-top:10px;
-border:none;
 background:black;
 color:white;
+border:none;
+padding:12px;
+width:90%;
+margin-top:8px;
 cursor:pointer;
+border-radius:6px;
 }
 
 button:hover{
-background:#444;
+background:#333;
 }
 
 .counter{
-font-size:13px;
-color:#888;
+font-size:12px;
 margin-top:6px;
+display:block;
+opacity:.7;
 }
 
-.cart{
-position:fixed;
-right:20px;
-bottom:20px;
+.cart-box{
 background:white;
-padding:20px;
-width:260px;
+max-width:900px;
+margin:40px auto;
+padding:30px;
 border-radius:10px;
-box-shadow:0 6px 20px rgba(0,0,0,0.2);
-}
-
-.checkout{
-background:#1877f2;
-}
-
-.fbbtn{
-background:#1877f2;
-margin-top:15px;
-}
-
-.steps{
-max-width:700px;
-margin:auto;
-text-align:left;
-line-height:1.8;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 footer{
-background:#111;
+background:black;
 color:white;
 text-align:center;
-padding:30px;
+padding:25px;
 margin-top:40px;
 }
 
@@ -120,230 +173,235 @@ margin-top:40px;
 
 <body>
 
+
 <header>
 
-<img src="Yna Studio.jpg">
+<img src="Yna Studio.jpg" class="logo">
 
 <h1>Yna Studio</h1>
 
-<p>Crafted in Vietnam, Worn with Filipina Confidence</p>
+<p>Crafted in Vietnam • Worn with Filipina Confidence</p>
 
 </header>
 
 
-<section class="section">
+<div class="cart">
+🛒 Cart: <span id="cartCount">0</span>
+</div>
+
+
+
+<div class="instructions">
 
 <h2>How To Order</h2>
 
-<div class="steps">
+<p><b>Step 1</b> – Select your shoe style</p>
+<p><b>Step 2</b> – Choose your preferred color</p>
+<p><b>Step 3</b> – Choose your shoe size (EU 36-39)</p>
+<p><b>Step 4</b> – Click <b>Add To Cart</b></p>
+<p><b>Step 5</b> – Review your order below</p>
+<p><b>Step 6</b> – Click <b>Checkout</b></p>
+<p><b>Step 7</b> – Your order will automatically copy</p>
+<p><b>Step 8</b> – You will be redirected to our Facebook Messenger</p>
+<p><b>Step 9</b> – Paste the message and send</p>
 
-<b>Step 1:</b> Browse the shoes below.<br><br>
+<p>We will arrange a <b>time and place to meet for the transaction.</b></p>
 
-<b>Step 2:</b> Select your preferred <b>color</b> and <b>size (EU 36-39)</b>.<br><br>
+<br>
 
-<b>Step 3:</b> Click <b>Add to Cart</b>.<br><br>
-
-<b>Step 4:</b> When finished shopping click <b>Checkout</b>.<br><br>
-
-<b>Step 5:</b> Your order message will be <b>automatically copied</b>.<br><br>
-
-<b>Step 6:</b> Our Facebook page will open.<br><br>
-
-<b>Step 7:</b> Paste the message into <b>Messenger</b> and send it.<br><br>
-
-<b>Step 8:</b> We will reply to arrange a <b>meeting date and time</b>.
+<a href="https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr" target="_blank">
+<button class="fbbtn">View Facebook Page</button>
+</a>
 
 </div>
 
-<button class="fbbtn" onclick="openFB()">Visit our Facebook Page</button>
-
-</section>
 
 
-<section class="section">
-
-<h2>Our Collection</h2>
+<div class="container">
 
 <div class="products">
 
-<!-- Closed Heels -->
 
-<div class="product">
-
-<img src="Closed heels.jpg">
-
-<h3>Closed Heels</h3>
-
-<p><b>725 PHP</b></p>
-
-<div class="counter">Bought: <span id="count1">0</span></div>
-
-<select id="color1">
-<option>Black</option>
-<option>Nude</option>
-<option>White</option>
-</select>
-
-<select id="size1">
-<option>EU 36</option>
-<option>EU 37</option>
-<option>EU 38</option>
-<option>EU 39</option>
-</select>
-
-<button onclick="addToCart('Closed Heels',725,'color1','size1','count1')">
-Add to Cart
-</button>
-
-</div>
-
-
-
-<!-- Knotted Mules -->
-
-<div class="product">
-
-<img src="Knotted Mules.jpg">
-
-<h3>Knotted Mules</h3>
-
-<p><b>725 PHP</b></p>
-
-<div class="counter">Bought: <span id="count2">0</span></div>
-
-<select id="color2">
-<option>Red</option>
-<option>Black</option>
-<option>Nude</option>
-</select>
-
-<select id="size2">
-<option>EU 36</option>
-<option>EU 37</option>
-<option>EU 38</option>
-<option>EU 39</option>
-</select>
-
-<button onclick="addToCart('Knotted Mules',725,'color2','size2','count2')">
-Add to Cart
-</button>
-
-</div>
-
-
-
-<!-- Closed Heeled Mule -->
-
-<div class="product">
-
-<img src="Closed-heeled mule.jpg">
-
-<h3>Closed-Heeled Mule</h3>
-
-<p><b>749 PHP</b></p>
-
-<div class="counter">Bought: <span id="count3">0</span></div>
-
-<select id="color3">
-<option>Black</option>
-<option>Red</option>
-<option>Beige</option>
-</select>
-
-<select id="size3">
-<option>EU 36</option>
-<option>EU 37</option>
-<option>EU 38</option>
-<option>EU 39</option>
-</select>
-
-<button onclick="addToCart('Closed-Heeled Mule',749,'color3','size3','count3')">
-Add to Cart
-</button>
-
-</div>
-
-
-
-<!-- Open Toe Heels -->
-
-<div class="product">
-
-<img src="Open-toe heels.jpg">
-
-<h3>Open Toe Heels</h3>
-
-<p><b>715 PHP</b></p>
-
-<div class="counter">Bought: <span id="count4">0</span></div>
-
-<select id="color4">
-<option>Gold</option>
-<option>Black</option>
-<option>Nude</option>
-</select>
-
-<select id="size4">
-<option>EU 36</option>
-<option>EU 37</option>
-<option>EU 38</option>
-<option>EU 39</option>
-</select>
-
-<button onclick="addToCart('Open Toe Heels',715,'color4','size4','count4')">
-Add to Cart
-</button>
-
-</div>
-
-
-
-<!-- Mary Jane -->
 
 <div class="product">
 
 <img src="Mary Jane shoes.jpg">
 
+<div class="product-body">
+
 <h3>Mary Jane Shoes</h3>
 
-<p><b>705 PHP</b></p>
+<div class="price">₱1200</div>
 
-<div class="counter">Bought: <span id="count5">0</span></div>
-
-<select id="color5">
+<select class="color">
 <option>Black</option>
+<option>Beige</option>
 <option>Brown</option>
-<option>Cream</option>
 </select>
 
-<select id="size5">
+<select class="size">
 <option>EU 36</option>
 <option>EU 37</option>
 <option>EU 38</option>
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Mary Jane Shoes',705,'color5','size5','count5')">
-Add to Cart
-</button>
+<button onclick="addCart('Mary Jane Shoes',1200,this)">Add To Cart</button>
+
+<span class="counter">Added: <span class="count">0</span></span>
 
 </div>
 
 </div>
 
-</section>
+
+
+<div class="product">
+
+<img src="Closed heels.jpg">
+
+<div class="product-body">
+
+<h3>Closed Heels</h3>
+
+<div class="price">₱1300</div>
+
+<select class="color">
+<option>Black</option>
+<option>Beige</option>
+<option>Brown</option>
+</select>
+
+<select class="size">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addCart('Closed Heels',1300,this)">Add To Cart</button>
+
+<span class="counter">Added: <span class="count">0</span></span>
+
+</div>
+
+</div>
 
 
 
-<div class="cart">
+<div class="product">
 
-<h3>Cart</h3>
+<img src="Open-toe heels.jpg">
+
+<div class="product-body">
+
+<h3>Open Toe Heels</h3>
+
+<div class="price">₱1100</div>
+
+<select class="color">
+<option>Black</option>
+<option>Beige</option>
+<option>Brown</option>
+</select>
+
+<select class="size">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addCart('Open Toe Heels',1100,this)">Add To Cart</button>
+
+<span class="counter">Added: <span class="count">0</span></span>
+
+</div>
+
+</div>
+
+
+
+<div class="product">
+
+<img src="Closed-heeled mule.jpg">
+
+<div class="product-body">
+
+<h3>Closed Heeled Mule</h3>
+
+<div class="price">₱1000</div>
+
+<select class="color">
+<option>Black</option>
+<option>Beige</option>
+<option>Brown</option>
+</select>
+
+<select class="size">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addCart('Closed Heeled Mule',1000,this)">Add To Cart</button>
+
+<span class="counter">Added: <span class="count">0</span></span>
+
+</div>
+
+</div>
+
+
+
+<div class="product">
+
+<img src="Knotted Mules.jpg">
+
+<div class="product-body">
+
+<h3>Knotted Mules</h3>
+
+<div class="price">₱950</div>
+
+<select class="color">
+<option>Black</option>
+<option>Beige</option>
+<option>Brown</option>
+</select>
+
+<select class="size">
+<option>EU 36</option>
+<option>EU 37</option>
+<option>EU 38</option>
+<option>EU 39</option>
+</select>
+
+<button onclick="addCart('Knotted Mules',950,this)">Add To Cart</button>
+
+<span class="counter">Added: <span class="count">0</span></span>
+
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+
+
+
+<div class="cart-box">
+
+<h2>Your Order</h2>
 
 <div id="cartItems"></div>
 
-<p><b>Total: <span id="total">0</span> PHP</b></p>
+<br>
 
-<button class="checkout" onclick="checkout()">Checkout</button>
+<button onclick="checkout()">Checkout & Send Order</button>
 
 </div>
 
@@ -351,9 +409,8 @@ Add to Cart
 
 <footer>
 
-<p><b>Yna Studio</b></p>
-
-<p>Orders are confirmed through Facebook Messenger and completed via meet-up.</p>
+<p>Yna Studio</p>
+<p>Contact us through Facebook Messenger</p>
 
 </footer>
 
@@ -362,71 +419,82 @@ Add to Cart
 <script>
 
 let cart=[]
-let total=0
+let cartCount=0
 
-function addToCart(name,price,colorID,sizeID,countID){
+function addCart(name,price,btn){
 
-let color=document.getElementById(colorID).value
-let size=document.getElementById(sizeID).value
+let product=btn.parentElement
+
+let color=product.querySelector(".color").value
+let size=product.querySelector(".size").value
 
 cart.push({name,price,color,size})
 
-total+=price
+cartCount++
 
-// increase bought counter
-let counter=document.getElementById(countID)
+document.getElementById("cartCount").innerText=cartCount
+
+let counter=product.querySelector(".count")
 counter.innerText=parseInt(counter.innerText)+1
 
-updateCart()
+displayCart()
 
 }
 
-function updateCart(){
 
-let cartDiv=document.getElementById("cartItems")
 
-cartDiv.innerHTML=""
+function displayCart(){
 
-cart.forEach(item=>{
+let list=""
 
-cartDiv.innerHTML+=`
-<div>
-${item.name}<br>
-${item.color} | ${item.size}
-</div><br>
+cart.forEach((item,i)=>{
+
+list+=`
+<p>
+${i+1}. ${item.name} | ${item.color} | ${item.size} | ₱${item.price}
+</p>
 `
 
 })
 
-document.getElementById("total").innerText=total
+document.getElementById("cartItems").innerHTML=list
 
 }
+
+
 
 function checkout(){
 
-let message="Hello Yna Studio! I would like to order:\n\n"
+if(cart.length==0){
 
-cart.forEach(item=>{
-message+=`${item.name} - ${item.color} - ${item.size}\n`
-})
+alert("Your cart is empty")
 
-message+=`\nTotal: ${total} PHP\n\nPlease confirm availability and schedule a meetup.`
-
-navigator.clipboard.writeText(message)
-
-alert("Your order message has been copied. Paste it in Facebook Messenger.")
-
-window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr","_blank")
+return
 
 }
 
-function openFB(){
+let message="Hello Yna Studio! I would like to place an order:%0A%0A"
+
+cart.forEach((item,i)=>{
+
+message+=`${i+1}. ${item.name}%0AColor: ${item.color}%0ASize: ${item.size}%0APrice: ₱${item.price}%0A%0A`
+
+})
+
+message+="Please let me know when we can meet for the transaction. Thank you!"
+
+let decoded=decodeURIComponent(message.replace(/%0A/g,"\n"))
+
+navigator.clipboard.writeText(decoded)
+
+alert("Order copied! You will now be redirected to Facebook Messenger. Paste the message and send.")
 
 window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr","_blank")
 
 }
 
 </script>
+
 
 </body>
 </html>
