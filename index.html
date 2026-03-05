@@ -2,203 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>YNA Studio</title>
+<title>Yna Studio</title>
 
 <style>
-
 body{
-font-family: Arial, sans-serif;
-background:#f7f7f7;
-margin:0;
-padding:0;
-text-align:center;
+    margin:0;
+    font-family:Arial;
+    background:#000;
+    color:white;
+    text-align:center;
 }
 
 header{
-background:black;
-color:white;
-padding:20px;
-font-size:28px;
-letter-spacing:2px;
+    padding:40px;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+header img{
+    width:180px;
+}
+
+.tagline{
+    color:#d4af37;
+    font-size:18px;
+    margin-top:10px;
+}
+
+h1{
+    color:#d4af37;
+    margin-top:40px;
 }
 
 .products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:35px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    padding:40px;
 }
 
 .product{
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.product:hover{
-transform:translateY(-5px);
+    width:220px;
+    background:#111;
+    padding:15px;
+    border-radius:10px;
 }
 
 .product img{
-width:100%;
-border-radius:6px;
+    width:100%;
+    border-radius:8px;
 }
 
-.name{
-font-size:18px;
-margin-top:10px;
+.product h3{
+    margin:10px 0 5px;
 }
 
 .price{
-font-weight:bold;
-color:#444;
-margin-bottom:10px;
+    color:#d4af37;
+    font-weight:bold;
 }
 
 .colors{
-display:flex;
-justify-content:center;
-gap:8px;
-margin-top:5px;
+    font-size:14px;
+    color:#ccc;
 }
 
-.colors img{
-width:35px;
-height:35px;
-border-radius:4px;
-object-fit:cover;
-border:1px solid #ddd;
+.contact{
+    margin-top:60px;
+    padding:40px;
+    background:#111;
 }
 
-footer{
-margin-top:40px;
-padding:20px;
-background:#111;
-color:white;
-font-size:14px;
+.contact h2{
+    color:#d4af37;
 }
 
 </style>
 </head>
 
-
 <body>
 
 <header>
-YNA STUDIO
+<img src="Yna Studio.jpg">
+<div class="tagline">Crafted in Vietnam, Worn with Filipina Confidence</div>
 </header>
 
-
-<div class="container">
+<h1>Elegant Women's Shoes</h1>
 
 <div class="products">
 
-
-<!-- Closed Heels -->
 <div class="product">
-
-<img src="closed-heels.jpg">
-
-<p class="name">Closed Heels</p>
-<p class="price">725 PHP</p>
-
-<div class="colors">
-<img src="closed-heels-white.jpg">
-<img src="closed-heels-black.jpg">
-<img src="closed-heels-beige.jpg">
+<img src="Closed heels.jpg">
+<h3>Closed Heels</h3>
+<div class="price">725 PHP</div>
+<div class="colors">Colors: Beige, Black</div>
 </div>
 
-</div>
-
-
-
-<!-- Knotted Mules -->
 <div class="product">
-
-<img src="knotted-mules.jpg">
-
-<p class="name">Knotted Mules</p>
-<p class="price">725 PHP</p>
-
-<div class="colors">
-<img src="knotted-mules-red.jpg">
-<img src="knotted-mules-black.jpg">
-<img src="knotted-mules-nude.jpg">
+<img src="Knotted Mules.jpg">
+<h3>Knotted Mules</h3>
+<div class="price">725 PHP</div>
+<div class="colors">Colors: Red, Black, Nude</div>
 </div>
 
-</div>
-
-
-
-<!-- Closed Heeled Mule -->
 <div class="product">
-
-<img src="closed-heeled-mule.jpg">
-
-<p class="name">Closed-Heeled Mule</p>
-<p class="price">749 PHP</p>
-
-<div class="colors">
-<img src="closed-heeled-mule-black.jpg">
-<img src="closed-heeled-mule-red.jpg">
+<img src="Closed-heeled mule.jpg">
+<h3>Closed-heeled Mule</h3>
+<div class="price">749 PHP</div>
+<div class="colors">Colors: Black, Red</div>
 </div>
 
-</div>
-
-
-
-<!-- Open Toe Heels -->
 <div class="product">
-
-<img src="open-toe-heels.jpg">
-
-<p class="name">Open-Toe Heels</p>
-<p class="price">715 PHP</p>
-
-<div class="colors">
-<img src="open-toe-heels-beige.jpg">
-<img src="open-toe-heels-black.jpg">
-<img src="open-toe-heels-red.jpg">
+<img src="Open-toe heels.jpg">
+<h3>Open-toe Heels</h3>
+<div class="price">715 PHP</div>
+<div class="colors">Colors: Nude, Black</div>
 </div>
 
-</div>
-
-
-
-<!-- Mary Jane Shoes -->
 <div class="product">
-
-<img src="mary-jane-shoes.jpg">
-
-<p class="name">Mary Jane Shoes</p>
-<p class="price">705 PHP</p>
-
-<div class="colors">
-<img src="mary-jane-black.jpg">
-<img src="mary-jane-white.jpg">
-<img src="mary-jane-red.jpg">
+<img src="Mary Jane shoes.jpg">
+<h3>Mary Jane Shoes</h3>
+<div class="price">705 PHP</div>
+<div class="colors">Colors: Black, Red, White</div>
 </div>
 
 </div>
 
-
-
+<div class="contact">
+<h2>Contact Us</h2>
+<p>📞 +63 954 157 1772</p>
+<p>📧 ynastudio23@gmail.com</p>
+<p>💬 Messenger: Yna Studio</p>
 </div>
-</div>
-
-
-<footer>
-Crafted in Vietnam, Worn with Filipina Confidence
-</footer>
 
 </body>
 </html>
