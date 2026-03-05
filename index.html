@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Yna Studio</title>
 
 <style>
@@ -11,14 +13,14 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f7f7f7;
+background:#f6f6f6;
 }
 
 header{
 background:black;
 color:white;
 text-align:center;
-padding:40px;
+padding:40px 20px;
 }
 
 header img{
@@ -26,18 +28,23 @@ width:120px;
 border-radius:50%;
 }
 
+.section{
+padding:40px 10%;
+text-align:center;
+}
+
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-padding:40px 10%;
+margin-top:30px;
 }
 
 .product{
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .product img{
@@ -55,14 +62,20 @@ button{
 width:100%;
 padding:10px;
 margin-top:10px;
+border:none;
 background:black;
 color:white;
-border:none;
 cursor:pointer;
 }
 
 button:hover{
 background:#444;
+}
+
+.counter{
+font-size:13px;
+color:#888;
+margin-top:6px;
 }
 
 .cart{
@@ -71,8 +84,8 @@ right:20px;
 bottom:20px;
 background:white;
 padding:20px;
-border-radius:10px;
 width:260px;
+border-radius:10px;
 box-shadow:0 6px 20px rgba(0,0,0,0.2);
 }
 
@@ -80,18 +93,30 @@ box-shadow:0 6px 20px rgba(0,0,0,0.2);
 background:#1877f2;
 }
 
-#orderMessage{
-background:white;
-padding:20px;
-margin:40px;
-border-radius:10px;
-display:none;
-white-space:pre-line;
+.fbbtn{
+background:#1877f2;
+margin-top:15px;
+}
+
+.steps{
+max-width:700px;
+margin:auto;
+text-align:left;
+line-height:1.8;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -106,6 +131,38 @@ white-space:pre-line;
 </header>
 
 
+<section class="section">
+
+<h2>How To Order</h2>
+
+<div class="steps">
+
+<b>Step 1:</b> Browse the shoes below.<br><br>
+
+<b>Step 2:</b> Select your preferred <b>color</b> and <b>size (EU 36-39)</b>.<br><br>
+
+<b>Step 3:</b> Click <b>Add to Cart</b>.<br><br>
+
+<b>Step 4:</b> When finished shopping click <b>Checkout</b>.<br><br>
+
+<b>Step 5:</b> Your order message will be <b>automatically copied</b>.<br><br>
+
+<b>Step 6:</b> Our Facebook page will open.<br><br>
+
+<b>Step 7:</b> Paste the message into <b>Messenger</b> and send it.<br><br>
+
+<b>Step 8:</b> We will reply to arrange a <b>meeting date and time</b>.
+
+</div>
+
+<button class="fbbtn" onclick="openFB()">Visit our Facebook Page</button>
+
+</section>
+
+
+<section class="section">
+
+<h2>Our Collection</h2>
 
 <div class="products">
 
@@ -118,6 +175,8 @@ white-space:pre-line;
 <h3>Closed Heels</h3>
 
 <p><b>725 PHP</b></p>
+
+<div class="counter">Bought: <span id="count1">0</span></div>
 
 <select id="color1">
 <option>Black</option>
@@ -132,7 +191,7 @@ white-space:pre-line;
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Closed Heels',725,'color1','size1')">
+<button onclick="addToCart('Closed Heels',725,'color1','size1','count1')">
 Add to Cart
 </button>
 
@@ -150,6 +209,8 @@ Add to Cart
 
 <p><b>725 PHP</b></p>
 
+<div class="counter">Bought: <span id="count2">0</span></div>
+
 <select id="color2">
 <option>Red</option>
 <option>Black</option>
@@ -163,7 +224,7 @@ Add to Cart
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Knotted Mules',725,'color2','size2')">
+<button onclick="addToCart('Knotted Mules',725,'color2','size2','count2')">
 Add to Cart
 </button>
 
@@ -181,6 +242,8 @@ Add to Cart
 
 <p><b>749 PHP</b></p>
 
+<div class="counter">Bought: <span id="count3">0</span></div>
+
 <select id="color3">
 <option>Black</option>
 <option>Red</option>
@@ -194,7 +257,7 @@ Add to Cart
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Closed-Heeled Mule',749,'color3','size3')">
+<button onclick="addToCart('Closed-Heeled Mule',749,'color3','size3','count3')">
 Add to Cart
 </button>
 
@@ -212,6 +275,8 @@ Add to Cart
 
 <p><b>715 PHP</b></p>
 
+<div class="counter">Bought: <span id="count4">0</span></div>
+
 <select id="color4">
 <option>Gold</option>
 <option>Black</option>
@@ -225,7 +290,7 @@ Add to Cart
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Open Toe Heels',715,'color4','size4')">
+<button onclick="addToCart('Open Toe Heels',715,'color4','size4','count4')">
 Add to Cart
 </button>
 
@@ -243,6 +308,8 @@ Add to Cart
 
 <p><b>705 PHP</b></p>
 
+<div class="counter">Bought: <span id="count5">0</span></div>
+
 <select id="color5">
 <option>Black</option>
 <option>Brown</option>
@@ -256,13 +323,15 @@ Add to Cart
 <option>EU 39</option>
 </select>
 
-<button onclick="addToCart('Mary Jane Shoes',705,'color5','size5')">
+<button onclick="addToCart('Mary Jane Shoes',705,'color5','size5','count5')">
 Add to Cart
 </button>
 
 </div>
 
 </div>
+
+</section>
 
 
 
@@ -274,15 +343,19 @@ Add to Cart
 
 <p><b>Total: <span id="total">0</span> PHP</b></p>
 
-<button class="checkout" onclick="checkout()">
-Checkout
-</button>
+<button class="checkout" onclick="checkout()">Checkout</button>
 
 </div>
 
 
 
-<div id="orderMessage"></div>
+<footer>
+
+<p><b>Yna Studio</b></p>
+
+<p>Orders are confirmed through Facebook Messenger and completed via meet-up.</p>
+
+</footer>
 
 
 
@@ -291,7 +364,7 @@ Checkout
 let cart=[]
 let total=0
 
-function addToCart(name,price,colorID,sizeID){
+function addToCart(name,price,colorID,sizeID,countID){
 
 let color=document.getElementById(colorID).value
 let size=document.getElementById(sizeID).value
@@ -299,6 +372,10 @@ let size=document.getElementById(sizeID).value
 cart.push({name,price,color,size})
 
 total+=price
+
+// increase bought counter
+let counter=document.getElementById(countID)
+counter.innerText=parseInt(counter.innerText)+1
 
 updateCart()
 
@@ -325,8 +402,6 @@ document.getElementById("total").innerText=total
 
 }
 
-
-
 function checkout(){
 
 let message="Hello Yna Studio! I would like to order:\n\n"
@@ -335,13 +410,17 @@ cart.forEach(item=>{
 message+=`${item.name} - ${item.color} - ${item.size}\n`
 })
 
-message+=`\nTotal: ${total} PHP\n\nCan we arrange a meeting time for pickup?`
+message+=`\nTotal: ${total} PHP\n\nPlease confirm availability and schedule a meetup.`
 
-let box=document.getElementById("orderMessage")
+navigator.clipboard.writeText(message)
 
-box.style.display="block"
+alert("Your order message has been copied. Paste it in Facebook Messenger.")
 
-box.innerText=message
+window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr","_blank")
+
+}
+
+function openFB(){
 
 window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr","_blank")
 
@@ -350,5 +429,4 @@ window.open("https://www.facebook.com/share/1AiHAFtueL/?mibextid=wwXIfr","_blank
 </script>
 
 </body>
-
 </html>
